@@ -1,0 +1,135 @@
+---
+title: "STA288 Lab 2 Assignment - Comparing Means (WINTER 2021)"
+author: "TYPE YOUR NAME HERE (UTORid)"
+output:
+  pdf_document: default
+---
+## Lab 3 Assignment (both .Rmd & .pdf) - Due 11:59pm ET, Thurs, April 1, on Quercus
+## Direct link to assignment - [https://q.utoronto.ca/courses/204820/assignments/581450](https://q.utoronto.ca/courses/204820/assignments/581450)
+
+## Graded out of 30 marks
+### *We strongly recommend you complete the Module 5 & 8 pre-lab videos **before** attempting this lab assignment. They demonstrate use of relevant procedures and R code which will help you as you think through this assignment.*
+
+### *NOTE: If you produce any graphs in R on this assignment, be sure to use clear labels and titles.*
+
+In this lab, you will summarize and interpret research data described in the following paper:
+
+Halaby, MJ, Hezaveh, K, Lamorte, S, et al. (2019) GCN2 drives macrophage and MDSC function and immunosuppression in the tumor microenvironment. *Science Immunology* 4(42), eaax8189. 
+
+The following code reads in the data and initializes the packages you may need for this assignment. Be sure to run this before running the later R code so that the dataset is read in and ready to summarize. If you do not do this, R will give you error messages. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(mosaic)
+library(tidyverse)
+
+# Code to read in data set:
+Lab3Data<- read_csv("STA288Lab3Data_Halaby_etal2019_7D.csv")
+attach(Lab3Data)
+
+```
+
+```{r}
+glimpse(Lab3Data)
+
+```
+
+
+## QUESTION 1 (10 marks)
+Consider *Figure 7D* (second panel) on page 11 of Halaby et al. (2019) where the authors presented a comparison of the typical final tumour weights (in g) across the three genotypes. In this question, you will reproduce the results presented in this figure.
+
+**a.** *(2 marks)* What do the heights of the bars in the plot represent? Calculate these values based on the *STA288Lab3Data_Halaby_etal2019_7D.csv* dataset and confirm whether or not your calculation match the heights of the bars in this figure.
+
+
+```{r}
+
+```
+
+
+**b.** *(2 marks)* What do the error bars represent? Be as specific as possible in your answer. Calculate these values based on the *STA288Lab3Data_Halaby_etal2019_7D.csv* dataset and confirm whether or not your calculation match the error bars in this figure.
+
+
+```{r}
+
+```
+
+
+**c.** *(4 marks)* What do the symbols (e.g., "**") above the error bars represent? Be specific and refer to the values the authors are reporting and STA288 vocabularly in your answer. Then, use R to run the statistical procedure(s) the authors used to determine these symbols and compare the results of these procedures to their reported results. 
+
+
+```{r}
+
+```
+
+
+**d.** *(2 marks)* What type of error (i.e., Type I or type II) should the researchers be most concerned about? Justify your answer.
+
+
+
+## QUESTION 2 (15 marks)
+
+Consider Figure 7D of Halaby et al. (2019) where the authors presented a comparison of the typical final tumour weights (in g) across the three genotypes again. 
+
+**a.** *(3 marks)*
+Create and interpret an appropriate graph to compare the distributions of tumor weight (in g) for the $GCN2^{fl/fl}$, $LysM-GCN2$ $cKO + Control$ $IgG$ and $LysM-GCN2$ $cKO + Anti-IL-1\beta$ $IgG$ conditions and interpret your summary in the context of the study. 
+```{r}
+
+```
+
+
+**b.** *(4 marks)*
+The authors conducted "unpaired Student’s t" tests to compare these means. A more appropriate approach (assuming all the necessary conditions are satisfied) would be to start with ANOVA. List the null and alternative hypothesis for a one-way ANOVA comparing mean final tumor weight (g) across the three conditions and use R to fit and print the summary of the one-way ANOVA on these data. 
+
+```{r}
+
+```
+
+
+
+**c.** *(6 marks)*
+List the one-way ANOVA conditions and assess each of them in the context of this study/data.
+
+```{r}
+
+```
+
+
+**d.** *(2 marks)*
+Regardless to your answer in *c.* (i.e., even if you do not think the conditions are reasonable here), interpret the results of the one-way ANOVA F test in this context.
+
+
+
+
+## QUESTION 3 (5 marks)
+
+Consider Figure 7D of Halaby et al. (2019) where the authors presented a comparison of the typical final tumour weights (in g) across the three genotypes again. 
+
+**a.** *(3 marks)* Obtain Bonferroni p-values on all pairwise comparisons of means and briefly interpret these results in the context of this study using an overall *5%* significance level. Does this match your conclusion based on the ANOVA F-test in *Question 2d*? Briefly explain why or why not. Assume the ANOVA assumptions are all reasonable to answer this question.
+
+```{r}
+
+```
+
+
+
+**b.** *(2 marks)*  Use R to construct Tukey's HSD confidence intervals that compare all pairs of means with a familywise confidence level of 95%. Briefly interpret the results in the context of the study. Assume the ANOVA assumptions are all reasonable to answer this question.
+
+```{r}
+
+```
+
+
+
+
+
+
+
+__________________________________________________________________________
+THIS IS THE END OF LAB ASSIGNMENT 3
+```{r echo = FALSE}
+# for grader use only (do not remove or edit this box)
+runif(1,0,1)
+date()
+```
+
